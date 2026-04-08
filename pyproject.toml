@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kg-assistant"
+version = "0.1.0"
+description = "KG-RAG assistant API scaffold with MCP tooling and offline optimization"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "networkx>=3.3",
+  "pydantic>=2.8"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.6"
+]
+
+[tool.setuptools]
+packages = ["api", "mcp", "kg", "rag", "optimizer", "benchmark"]
